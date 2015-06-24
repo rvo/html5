@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Cocina de la cafetería de la escuela de verano de Ingeniería de Software</title>
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+	<header>
+		<h1 class="tituloPrincipal">
+			<img id="logo" src="imagenes/logo.svg" alt="Logotipo de la cafetería">
+			Cocina de la cafetería de la escuela de verano IS 2015
+		</h1>	
+	</header>
+	<section id="platillos">
+	<h2 class="tituloSeccion">Comandas</h2>
+	<section id="comandas">
+		
+	</section>
+	<footer>	
+		<p>&copy;Derechos permitidos a todo el mundo.</p>
+		<p id="coords"> </p>
+	</footer>
+</body>
+</html>
