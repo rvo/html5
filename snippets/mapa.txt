@@ -1,0 +1,20 @@
+function listo(posicion){
+	var mapa=document.getElementById('mapa');
+	
+	mapa.innerHTML="Tu posición actual "+ posicion.coords.latitude + "," + posicion.coords.longitude;
+
+	var pos=new google.maps.LatLng(posicion.coords.latitude, posicion.coords.longitude)
+	var mapOptions = {
+    		zoom: 15,
+    		center: pos
+  	};
+  	var map = new google.maps.Map(mapa,mapOptions);
+  	var infowindow = new google.maps.InfoWindow({
+        map: map,
+        position: pos,
+        content: 'Te encontré'
+      });
+
+    map.setCenter(pos);
+	
+}
