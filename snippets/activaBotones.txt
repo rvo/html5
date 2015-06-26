@@ -1,8 +1,0 @@
-var mesa="mesa 1";
-window.addEventListener("load",function(event){
-		var botones = document.getElementsByTagName("button");
-		var listaBotones=Array.prototype.slice.call(botones);
-		listaBotones.forEach(function(item){
-			item.addEventListener("click",generaComanda);
-		});
-});
