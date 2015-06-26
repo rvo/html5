@@ -1,0 +1,10 @@
+function encuentrame(){
+	if (navigator.geolocation) {		
+  		navigator.geolocation.getCurrentPosition(listo, error);
+	} else {
+  		error('no soportado');
+	}
+}
+function error(err){
+	console.log(err);
+}
