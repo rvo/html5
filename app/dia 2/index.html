@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+	<meta charset="utf-8"/>
+	<title>Cafetería de la escuela de verano de Ingeniería de Software</title>
+	<link rel="stylesheet" href="css/estilos.css">
+   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script src="http://148.226.81.75:8080/socket.io/socket.io.js"></script>
+    <script src="scripts/fonda.js"></script>
+</head>
+<body>
+	<header>
+		<h1  class="tituloPrincipal">
+			<img id="logo" src="imagenes/logo.svg" alt="Logotipo de la cafetería">
+			Cafetería de la escuela de verano IS 2015
+		</h1>
+		<nav class="navegacion">
+			<h2 class="outline">Menú del sitio</h2>
+			<ul>
+				<li><a href="#platoFuerte">Plato fuerte</a></li>
+				<li><a href="#ensaladas">Ensaladas</a></li>
+				<li><a href="#postres">Postres</a></li>
+			</ul>
+			<div id="comanda">
+				<p>Platillos seleccionados (<span id="seleccionados">0</span>)</p>
+				<button id="enviarpedido">Enviar</button>
+			</div>
+		</nav>		
+	</header>
+	<section id="platillos">
+	<h2 class="tituloSeccion">Platillos disponibles</h2>
+	<p class="nota">Los platillos son preparados al momento, por lo que tendrán un tiempo de espera de 20 minutos</p>
+	<section id="platoFuerte">
+		<h3>Plato fuerte</h3>
+		<ul>
+			<li>
+				<figure>
+					<img src="imagenes/256px-Skalldyr.jpg" alt="Langostinos y jaibas">
+					<figcaption>Langostinos y jaibas <span class="precio">$ 100.00</span></figcaption>
+				</figure>
+				<button id="fuerte001">Ordenar</button>
+			</li>
+			<li>
+				<figure>
+					<img src="imagenes/320px-Couscous.jpg" alt="Aceitunas con queso">
+					<figcaption>Aceitunas con queso <span>$ 100.00</span></figcaption>
+				</figure>
+				<button id="fuerte002">Ordenar</button>
+			</li>
+			<li>
+				<figure>
+					<img src="imagenes/320px-Pikilia.jpg" alt="Camarones con ensalada">
+					<figcaption>Camarones con ensalada <span>$ 100.00</span></figcaption>
+				</figure>
+				<button id="fuerte003">Ordenar</button>
+			</li>
+			<li>
+				<figure>
+					<img src="imagenes/320px-Sunday_roast_beef.jpg" alt="Carne asada">
+					<figcaption>Carne asada <span>$ 100.00</span></figcaption>
+				</figure>
+				<button id="fuerte004">Ordenar</button>
+			</li>
+			<li>
+				<figure>
+					<img src="imagenes/512px-Sushi_appetizer.jpg" alt="Sushi">
+					<figcaption>Sushi <span>$ 100.00</span></figcaption>
+				</figure>
+				<button id="fuerte005">Ordenar</button>
+			</li>
+		</ul>
+	</section>
+	<section id="ensaladas">
+		<h3>Ensaladas frescas</h3>
+		<ul>
+			<li>
+				<figure>
+					<img src="imagenes/320px-Ensalada.jpg" alt="Ensalada">
+					<figcaption>Ensalada de lechuga <span>$ 100.00</span></figcaption>
+				</figure>
+				<button id="ensalada001">Ordenar</button>
+			</li>
+			<li>
+				<figure>
+					<img src="imagenes/256px-fruit_salad.jpg" alt="Ensalada de fruta">
+					<figcaption>Ensalada de fruta <span>$ 100.00</span></figcaption>
+				</figure>
+				<button id="ensalada002">Ordenar</button>
+			</li>
+		</ul>
+	</section>	
+	<section id="postres">
+		<h3>Postres</h3>
+		<ul>
+			<li>
+				<figure>
+					<img src="imagenes/308px-ApplePie.jpg" alt="Pay de manzana">
+					<figcaption>Pay de manzana <span>$ 100.00</span></figcaption>
+				</figure>
+				<button id="postre001">Ordenar</button>
+			</li>
+			<li>
+				<figure>
+					<img src="imagenes/320px-Creme_Caramel.jpg" alt="Flan de vainilla">
+					<figcaption>Flan de vainilla <span>$ 100.00</span></figcaption>
+				</figure>
+				<button id="postre002">Ordenar</button>
+			</li>
+		</ul>
+	</section>
+	</section>
+	<aside id="sugerencias">
+		<h2 class="tituloSeccion">Sugerencias del día</h2>
+		<ul>
+			<li  >
+				<figure>
+					<img src="imagenes/320px-Palatschinke.jpg" alt="Crepas de cajeta">
+					<figcaption>Crepas de cajeta <span>$ 100.00</span></figcaption>
+				</figure>
+				<button id="postre003">Ordenar</button>
+			</li>
+			<li  >
+				<figure>
+					<img src="imagenes/256px-Caramel_Nut_Ice.jpg" alt="Helado de nuez">
+					<figcaption>Helado de nuez <span>$ 100.00</span></figcaption>
+				</figure>
+				<button id="postre004">Ordenar</button>
+			</li>
+			<li>
+				<video>
+					<source src="video/crepas.webm" type="video/webm; codecs='vp8, vorbis'">
+					<source src="video/crepas.mp4" type="video/mp4">
+					<source src="video/crepas.ogv" type="video/ogv; codecs='theora, vorbis'">
+				</video>
+			</li>
+		</ul>
+		<section id="ubicacion">
+			<h2 class="tituloSeccion">Visítanos en:</h2>
+			<div id="mapa">
+				
+			</div>
+		</section>
+	</aside>
+	<footer>
+		<p>&copy;Derechos permitidos a todo el mundo.</p>
+	</footer>
+</body>
+</html>

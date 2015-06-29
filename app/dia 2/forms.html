@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		meter{
+			width: 100%;
+		}
+	</style>
+	<script>
+	function valida(ctrl){
+		if(ctrl.value!="html5"){
+			ctrl.setCustomValidity("Lo siento no estás en la onda HTML5 :(");
+		}else{
+			ctrl.setCustomValidity("");
+		}
+	}
+	</script>
+</head>
+<body>
+	<form action="pagina.php" method="">
+		<div>
+			<label for="nombre">Nombre:</label>
+			<input type="text" placeholder="ej: Juan Pérez" id="nombre" name="nombre" oninput="valida(this);"required>
+			<input type="date">
+			<input type="color" oninput="resultado.value=this.value">
+			<output id="resultado"></output>
+		</div>
+		<input type="submit" value="enviar">
+	</form>
+</body>
+</html>
